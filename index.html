@@ -24,6 +24,15 @@
           <li><a href="#">Certificados</a></li>
           <li><a href="#">Contato</a></li>
         </ul>
+        <img class="icon-menu" src="./assets/menu_google.svg" alt="Menu icon" onclick="ShowMenu()" />
+        <aside class="mobile-menu hide">
+          <ul class="">
+            <li><a class="about" href="#sobre">Sobre</a></li>
+            <li><a href="#">Habilidade</a></li>
+            <li><a href="#">Certificados</a></li>
+            <li><a href="#">Contato</a></li>
+          </ul>
+        </aside>
       </nav>
     </header>
     <section>
@@ -32,16 +41,21 @@
   </body>
   <script>
     let menu = document.querySelector(".links-nave");
-    window.addEventListener("resize", () => {
-      if (document.documentElement.clientWidth <= 730) {
-        menu.classList.add("mobile-menu");
+    function WidthVerification() {
+      if (document.documentElement.clientWidth <= 780) {
+        menu.classList.add("hide");
         menu.classList.remove("links-nave");
       } else {
         menu.classList.add("links-nave");
-        menu.classList.remove("mobile-menu");
-        
+        menu.classList.remove("hide");
       }
-    });
-    console.log(menu);
+    }
+    function ShowMenu() {
+      let aside = document.querySelector("aside");
+      aside.classList.toggle("hide");
+      
+    }
+    window.addEventListener("resize",WidthVerification);
+    window.addEventListener("load",WidthVerification);
   </script>
 </html>
