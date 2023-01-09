@@ -13,15 +13,12 @@ html {
 }
 
 header {
-    background: url("../assets/city-evenning.jpg") no-repeat fixed;
+    background: url("../assets/city-evenning.jpg") no-repeat;
+    background-attachment: fixed;
     background-size: cover;
     background-position:center;
     width:100%;
-    height:20rem;
-}
-
-.hide {
-    display: none;
+    height:clamp(18rem, 20rem, 30rem);
 }
 
 .menu {
@@ -30,51 +27,26 @@ header {
     background: linear-gradient(180deg, #121212 0%, rgba(91, 89, 89, 0) 100%);
     display: flex;
     align-items: center;
+    text-align: center;
     justify-content: space-between;
-    padding:0.5rem;
+    /* position: fixed;
+            right: 0;
+            left: 0; */
 }
 
-.menu h2 {
+.name-title {
     font-family: 'Oswald', sans-serif;
     font-size:80px;
     color:#f7f7f2;
+    margin:1rem;
 }
 
 .links-nave {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    list-style: none;
+    display: none;
 }
 
-.links-nave li {
-    margin:1rem 2rem;
-}
-
-.links-nave li a{
-    color: #f7f7f2;
-    font-family: 'Oswald', sans-serif;
-    transition: ease;
-    transition-duration: 200ms;
-}
-
-.links-nave li a:hover {
-    /*color:rgba(247, 247, 242, 0.836);*/
-    background:rgba(247, 247, 242, 0.836);
-    color: #121212;
-    padding: 1rem 1.5rem;
-    border-radius: 4px;
-}
-
-.links-nave .about {
-    background-color: #f7f7f2;
-    color: #121212;
-    padding: 1rem 1.5rem;
-    border-radius: 4px;
-}
-
-.links-nave .about:hover {
-    background:rgba(247, 247, 242, 0.836);
+.icon-menu {
+    margin:2rem;
 }
 
 .mobile-menu {
@@ -94,17 +66,35 @@ header {
     align-items: center;
     justify-content: center;
 
-    transition: all .2s linear;
-    animation-name: input;
-    animation-delay: 200ms;
+    transition: all .2s ease;
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
-@keyframes input{
+@keyframes slide_out {
     from{
         transform: translateX(0px);
+        opacity: 1;
+        transition: all 2s ease;
     }
     to{
-        transform: translateX(100px);
+        transform: translateX(-100px);
+        opacity:0;
+        transition: all 2s ease;
+    }
+}
+
+@keyframes slide{
+    
+    from{
+        transform: translateX(-100px);
+        opacity:0;
+    }
+
+    to{
+        transform: translateX(0px);
+        opacity: 1;
     }
 }
 
@@ -128,7 +118,67 @@ header {
     font-family:"Oswald",sans-serif;
 }
 
+.mobile-menu.hide{
+    transition: all 2s ease;
+    animation-name: slide_out;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
 
-.mobile-menu.hide {
-    display: none;
+
+.prof-name {
+    font-family: 'Dancing Script', cursive;
+    font-size: 2rem;
+    color: #f7f7f2;
+    position: absolute;
+            top:1rem;
+            right:5rem;
+}
+
+@media screen and (min-width: 780px) {
+    .mobile-menu {
+        display: none;
+    }
+    .icon-menu {
+        display: none;
+    }
+    .links-nave {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        list-style: none;
+        margin:2rem;
+    }
+    
+    .links-nave li {
+        margin:1rem 2rem;
+    }
+    
+    .links-nave li a{
+        color: #f7f7f2;
+        font-family: 'Oswald', sans-serif;
+        transition: ease;
+        transition-duration: 200ms;
+    }
+    
+    .links-nave li a:hover {
+        /*color:rgba(247, 247, 242, 0.836);*/
+        background:rgba(247, 247, 242, 0.836);
+        color: #121212;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+    }
+    
+    .links-nave .about {
+        background-color: #f7f7f2;
+        color: #121212;
+        padding: 1rem 1.5rem;
+        border-radius: 4px;
+    }
+    
+    .links-nave .about:hover {
+        background:rgba(247, 247, 242, 0.836);
+    }
+    
 }

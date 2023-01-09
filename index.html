@@ -6,10 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/index.css" />
 
     <title>Portifolio Dalves</title>
@@ -17,15 +14,23 @@
   <body>
     <header>
       <nav class="menu">
-        <h2>Dalves</h2>
+        <h2 class="name-title">Dalves</h2>
         <ul class="links-nave">
           <li><a class="about" href="#sobre">Sobre</a></li>
           <li><a href="#">Habilidade</a></li>
           <li><a href="#">Certificados</a></li>
           <li><a href="#">Contato</a></li>
         </ul>
-        <img class="icon-menu" src="./assets/menu_google.svg" alt="Menu icon" onclick="ShowMenu()" />
+        
+        <img 
+          class="icon-menu" 
+          src="./assets/menu_google.svg" 
+          alt="Menu icon" 
+          onclick="ShowMenu()" 
+        />
+        
         <aside class="mobile-menu hide">
+          <span class="prof-name">Dalves</span>
           <ul class="">
             <li><a class="about" href="#sobre">Sobre</a></li>
             <li><a href="#">Habilidade</a></li>
@@ -36,26 +41,26 @@
       </nav>
     </header>
     <section>
-      <div id="sobre"></div>
+      <div id="sobre">
+        <div>
+          <h2>Danilo Alves</h2>
+          <img src="#" alt="profile image" />
+        </div>
+        <ul>
+          <h2>informações & Hobbies</h2>
+          <li>17 Anos</li>
+          <li>Musico</li>
+          <li>Programador</li>
+          <li>Bilíngue</li>
+        </ul>
+      </div>
     </section>
   </body>
   <script>
-    let menu = document.querySelector(".links-nave");
-    function WidthVerification() {
-      if (document.documentElement.clientWidth <= 780) {
-        menu.classList.add("hide");
-        menu.classList.remove("links-nave");
-      } else {
-        menu.classList.add("links-nave");
-        menu.classList.remove("hide");
-      }
-    }
     function ShowMenu() {
       let aside = document.querySelector("aside");
       aside.classList.toggle("hide");
       
     }
-    window.addEventListener("resize",WidthVerification);
-    window.addEventListener("load",WidthVerification);
   </script>
 </html>
