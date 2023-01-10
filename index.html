@@ -6,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@300;400&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Oswald:wght@300;400&family=Roboto+Mono:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./styles/index.css" />
-
+    <script src="./scripts/main.js"></script>
     <title>Portifolio Dalves</title>
   </head>
   <body>
@@ -21,46 +24,77 @@
           <li><a href="#">Certificados</a></li>
           <li><a href="#">Contato</a></li>
         </ul>
-        
-        <img 
-          class="icon-menu" 
-          src="./assets/menu_google.svg" 
-          alt="Menu icon" 
-          onclick="ShowMenu()" 
+
+        <img
+          class="icon-menu"
+          src="./assets/menu_google.svg"
+          alt="Menu icon"
+          onclick="ShowMenu()"
+          onkeypress="ShowMenuAcess()"
+          tabindex="0"
         />
-        
-        <aside class="mobile-menu hide">
-          <span class="prof-name">Dalves</span>
-          <ul class="">
-            <li><a class="about" href="#sobre">Sobre</a></li>
-            <li><a href="#">Habilidade</a></li>
-            <li><a href="#">Certificados</a></li>
-            <li><a href="#">Contato</a></li>
-          </ul>
-        </aside>
       </nav>
     </header>
+    <aside class="hide mobile-menu">
+      <span class="prof-name" lang="pt-br">Dalves</span>
+      <div class="back-icon"></div>
+      <ul class="">
+        <li>
+          <a tabindex="0" onclick="ShowMenu()" class="about" href="#sobre"
+            >Sobre</a
+          >
+          <img class="icon-aside" src="./assets/info_.svg" alt="" />
+        </li>
+        <li>
+          <a tabindex="0" onclick="ShowMenu()" href="#">Habilidade</a>
+          <img class="icon-aside" src="./assets/school_.svg" alt="" />
+        </li>
+        <li>
+          <a tabindex="0" onclick="ShowMenu()" href="#">Certificados</a>
+          <img class="icon-aside" src="./assets/certification_.svg" alt="" />
+        </li>
+        <li>
+          <a tabindex="0" onclick="ShowMenu()" href="#">Contato</a>
+          <img class="icon-aside" src="./assets/contacts_.svg" alt="" />
+        </li>
+        <li>
+          <a tabindex="0" onclick="ShowMenu(), Modal()" href="#">Ajuda</a>
+          <img class="icon-aside" src="./assets/help_.svg" alt="" />
+        </li>
+      </ul>
+    </aside>
     <section>
       <div id="sobre">
-        <div>
-          <h2>Danilo Alves</h2>
-          <img src="#" alt="profile image" />
+        <div id="profile_container">
+          <h2 class="name-profile">Danilo Alves</h2>
+          <img
+            class="image-profile"
+            src="./assets/profile.jpg"
+            alt="profile image"
+            title="Danilo Alves"
+          />
         </div>
-        <ul>
-          <h2>informações & Hobbies</h2>
-          <li>17 Anos</li>
-          <li>Musico</li>
-          <li>Programador</li>
-          <li>Bilíngue</li>
-        </ul>
+
+        <div class="info-container">
+          <h2>informações &<br/> Hobbies</h2>
+          <ul class="info">
+            <li>17 Anos</li>
+            <li>Musico</li>
+            <li>Programador</li>
+            <li>Bilíngue</li>
+          </ul>
+        </div>
+        <img class="wave" src="./assets/wave.svg" alt="">
       </div>
     </section>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
   </body>
-  <script>
-    function ShowMenu() {
-      let aside = document.querySelector("aside");
-      aside.classList.toggle("hide");
-      
-    }
-  </script>
 </html>
