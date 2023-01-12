@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   text-decoration: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --shadow-primary: box-shadow: 2px 3px 10px 10px #12121269;  
 }
 
 html {
@@ -20,6 +25,12 @@ header {
   background-position: center;
   width: 100%;
   height: clamp(18rem, 20rem, 30rem);
+}
+
+@media (min-width: 780px) {
+  header {
+    height:28rem;
+  }
 }
 
 .menu {
@@ -294,9 +305,15 @@ section {
 }
 
 .biography-container {
-  background: #121212;
+  background:#121212;
   padding: 1rem;
   position: relative;
+}
+
+@media screen and (min-width: 700px) {
+  .biography-container {
+    background: linear-gradient(63.13deg, #121212 50%, #252525 50%);
+  }
 }
 
 .biography-content {
@@ -350,31 +367,5 @@ section {
 @media screen and (max-width: 380px) {
   .biography-main p {
     font-size: 1.1rem;
-  }
-}
-
-.blob-1 {
-  position: absolute;
-  bottom:0;
-  left:5rem;
-  width:10rem;
-  height:10rem;
-  z-index:1;
-}
-
-.blob-3 {
-  position: absolute;
-  top:1rem;
-  left:1rem;
-  width:12rem;
-  height:12rem;
-  transform: rotate(10deg);
-}
-
-@media screen and (max-width:779px){
-  .blob-1, .blob-3 {
-    display: none;
-    visibility: hidden;
-    position: none;
   }
 }
